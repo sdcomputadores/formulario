@@ -7,7 +7,7 @@ export function valida(input){
 }
   if (input.validity.valid){
     input.parentElement.classList.remove('input-container--invalido')
-    input.parentElement.querySelector('input-mensagem-erro').innerHTML = ''
+    input.parentElement.querySelector('.input-mensagem-erro').innerHTML = ''
   }else{
     input.parentElement.classList.add('input-container--invalido')
     input.parentElement.querySelector('input-mensagem-erro').innerHTML = mostraMensagemDeErro(tipoDeInput, input)
@@ -197,18 +197,21 @@ if(!input.validity.patternMismatch && !input.validity.valueMissing){
  }
  
 function preencheCamposViaCep(data){
+ 
+  const bairro = document.querySelector('#bairro')
+  const rua = document.querySelector('#logradouro')
+const cidade = document.querySelector('#cidade')  
+const estado = document.querySelector('#estado')
 
-const cidade = document.querySelector('.cidade')
-const estado = document.querySelector('[dada-tipo="estado"]')
-const rua = document.querySelector('[dada-tipo="rua"]')
-const bairro = document.querySelector('[dada-tipo="bairro"]')
+
+
 
 bairro.value = data.bairro
-rua.value = data.rua
+rua.value = data.logradouro
 cidade.value = data.localidade
 estado.value = data.uf
 
-console.log(cidade.value)
+
 
 }
 

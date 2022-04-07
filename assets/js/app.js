@@ -5,7 +5,8 @@ const inputs= document.querySelectorAll('input')
 
 inputs.forEach(input => {
 
-    if(input.dateset === 'preco')    {  
+    if(input.dataset.tipo === 'preco')    {  
+       
         SimpleMaskMoney.setMask(input, {  
             prefix: 'R$ ',
             fixed: true,
